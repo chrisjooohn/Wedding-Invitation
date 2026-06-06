@@ -59,8 +59,12 @@ function clearErrors() {
 }
 
 function showSuccess() {
-  successMessage.textContent = 'Thank you! Your RSVP has been received. We can’t wait to celebrate with you.';
-  form.reset();
+  if (successMessage) {
+    successMessage.textContent = 'Thank you! Your RSVP has been received. We can’t wait to celebrate with you.';
+  }
+  if (form) {
+    form.reset();
+  }
 }
 
 function handleFormSubmit(event) {
@@ -144,7 +148,9 @@ function init() {
   handleSmoothScroll();
   handleParallax();
   handleGallery();
-  form.addEventListener('submit', handleFormSubmit);
+  if (form) {
+    form.addEventListener('submit', handleFormSubmit);
+  }
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) {

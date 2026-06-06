@@ -364,10 +364,104 @@ a {
   margin: 0 0 0.75rem;
   font-family: "Cormorant Garamond", Georgia, serif;
 }
+.invitation-section .panel.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 243, 236, 0.98));
+  border: 1px solid rgba(210, 188, 164, 0.35);
+  box-shadow: 0 26px 60px rgba(22, 18, 14, 0.06);
+  padding: 2.25rem;
+}
 
+.invitation-section .accent-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(210, 188, 164, 0.18);
+  position: relative;
+}
+
+.invitation-section .accent-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  height: calc(100% - 2rem);
+  width: 4px;
+  background: linear-gradient(180deg, rgba(201, 147, 79, 0.95), rgba(214, 183, 141, 0.8));
+  border-radius: 999px;
+}
+
+.invitation-section .accent-card h3,
+.invitation-section .accent-card p {
+  position: relative;
+}
+
+.invitation-section .accent-card ul {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.invitation-section .accent-card li {
+  padding-left: 1.4rem;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.7;
+  position: relative;
+}
+
+.invitation-section .accent-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.invitation-section .panel.card p {
+  color: rgba(33, 33, 33, 0.85);
+  line-height: 1.85;
+}
+
+.invitation-section .grid-two {
+  gap: 2rem;
+}
 .detail-card {
   position: relative;
 }
+
+/* Welcome panel refinements */
+.invitation-section .panel.card h2 {
+  margin: 0 0 0.5rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.invitation-section .panel.card h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 0.6rem;
+  background: linear-gradient(90deg, rgba(201,147,79,0.95), rgba(214,183,141,0.8));
+  border-radius: 999px;
+}
+
+.invitation-section .panel.card p {
+  color: rgba(33,33,33,0.88);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.invitation-section .panel.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 .map-placeholder,
 .qr-placeholder {
@@ -700,7 +794,26 @@ textarea:focus {
   }
 
   .countdown-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .countdown-grid div {
+    min-width: 5.5rem;
+    flex: 1 1 5.5rem;
+    padding: 1rem;
+  }
+
+  .countdown-grid span {
+    font-size: 2rem;
+  }
+
+  .countdown-grid small {
+    font-size: 0.75rem;
   }
 
   .gallery-item {
@@ -725,7 +838,26 @@ textarea:focus {
   }
 
   .countdown-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .countdown-grid div {
+    min-width: 5rem;
+    flex: 1 1 5rem;
+    padding: 0.85rem;
+  }
+
+  .countdown-grid span {
+    font-size: 1.9rem;
+  }
+
+  .countdown-grid small {
+    font-size: 0.7rem;
   }
 
   .button.primary {
